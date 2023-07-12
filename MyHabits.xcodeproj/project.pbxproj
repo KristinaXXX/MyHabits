@@ -10,9 +10,16 @@
 		610058A52A5E90EA00E8732C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610058A42A5E90EA00E8732C /* AppDelegate.swift */; };
 		610058A72A5E90EA00E8732C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610058A62A5E90EA00E8732C /* SceneDelegate.swift */; };
 		610058A92A5E90EA00E8732C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610058A82A5E90EA00E8732C /* ViewController.swift */; };
-		610058AC2A5E90EA00E8732C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 610058AA2A5E90EA00E8732C /* Main.storyboard */; };
 		610058AE2A5E90ED00E8732C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 610058AD2A5E90ED00E8732C /* Assets.xcassets */; };
 		610058B12A5E90ED00E8732C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 610058AF2A5E90ED00E8732C /* LaunchScreen.storyboard */; };
+		610058B92A5EB71500E8732C /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610058B82A5EB71500E8732C /* TabBarController.swift */; };
+		610058BB2A5EB78300E8732C /* HabitsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610058BA2A5EB78300E8732C /* HabitsViewController.swift */; };
+		610058BF2A5EBFA100E8732C /* ExtensionUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610058BE2A5EBFA100E8732C /* ExtensionUIViewController.swift */; };
+		610058C12A5EBFA900E8732C /* HabitsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610058C02A5EBFA900E8732C /* HabitsStore.swift */; };
+		610058C32A5EC05000E8732C /* HabitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610058C22A5EC05000E8732C /* HabitViewController.swift */; };
+		610058C52A5EC42600E8732C /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610058C42A5EC42600E8732C /* InfoViewController.swift */; };
+		610058C72A5EC4CE00E8732C /* InfoText.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 610058C62A5EC4CE00E8732C /* InfoText.rtf */; };
+		610058C92A5EF21800E8732C /* 66h.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 610058C82A5EF21800E8732C /* 66h.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,10 +27,17 @@
 		610058A42A5E90EA00E8732C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		610058A62A5E90EA00E8732C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		610058A82A5E90EA00E8732C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		610058AB2A5E90EA00E8732C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		610058AD2A5E90ED00E8732C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		610058B02A5E90ED00E8732C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		610058B22A5E90ED00E8732C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		610058B82A5EB71500E8732C /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		610058BA2A5EB78300E8732C /* HabitsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitsViewController.swift; sourceTree = "<group>"; };
+		610058BE2A5EBFA100E8732C /* ExtensionUIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionUIViewController.swift; sourceTree = "<group>"; };
+		610058C02A5EBFA900E8732C /* HabitsStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HabitsStore.swift; sourceTree = "<group>"; };
+		610058C22A5EC05000E8732C /* HabitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitViewController.swift; sourceTree = "<group>"; };
+		610058C42A5EC42600E8732C /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
+		610058C62A5EC4CE00E8732C /* InfoText.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = InfoText.rtf; sourceTree = "<group>"; };
+		610058C82A5EF21800E8732C /* 66h.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = 66h.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,10 +70,17 @@
 		610058A32A5E90EA00E8732C /* MyHabits */ = {
 			isa = PBXGroup;
 			children = (
+				610058C02A5EBFA900E8732C /* HabitsStore.swift */,
+				610058BE2A5EBFA100E8732C /* ExtensionUIViewController.swift */,
 				610058A42A5E90EA00E8732C /* AppDelegate.swift */,
+				610058C22A5EC05000E8732C /* HabitViewController.swift */,
 				610058A62A5E90EA00E8732C /* SceneDelegate.swift */,
+				610058B82A5EB71500E8732C /* TabBarController.swift */,
+				610058C82A5EF21800E8732C /* 66h.storyboard */,
+				610058C42A5EC42600E8732C /* InfoViewController.swift */,
+				610058C62A5EC4CE00E8732C /* InfoText.rtf */,
+				610058BA2A5EB78300E8732C /* HabitsViewController.swift */,
 				610058A82A5E90EA00E8732C /* ViewController.swift */,
-				610058AA2A5E90EA00E8732C /* Main.storyboard */,
 				610058AD2A5E90ED00E8732C /* Assets.xcassets */,
 				610058AF2A5E90ED00E8732C /* LaunchScreen.storyboard */,
 				610058B22A5E90ED00E8732C /* Info.plist */,
@@ -126,8 +147,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				610058B12A5E90ED00E8732C /* LaunchScreen.storyboard in Resources */,
+				610058C92A5EF21800E8732C /* 66h.storyboard in Resources */,
+				610058C72A5EC4CE00E8732C /* InfoText.rtf in Resources */,
 				610058AE2A5E90ED00E8732C /* Assets.xcassets in Resources */,
-				610058AC2A5E90EA00E8732C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -139,22 +161,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				610058A92A5E90EA00E8732C /* ViewController.swift in Sources */,
+				610058B92A5EB71500E8732C /* TabBarController.swift in Sources */,
 				610058A52A5E90EA00E8732C /* AppDelegate.swift in Sources */,
+				610058BB2A5EB78300E8732C /* HabitsViewController.swift in Sources */,
+				610058C52A5EC42600E8732C /* InfoViewController.swift in Sources */,
+				610058C12A5EBFA900E8732C /* HabitsStore.swift in Sources */,
 				610058A72A5E90EA00E8732C /* SceneDelegate.swift in Sources */,
+				610058C32A5EC05000E8732C /* HabitViewController.swift in Sources */,
+				610058BF2A5EBFA100E8732C /* ExtensionUIViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		610058AA2A5E90EA00E8732C /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				610058AB2A5E90EA00E8732C /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		610058AF2A5E90ED00E8732C /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -285,15 +305,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MyHabits/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -301,6 +322,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.nagaevaki.MyHabits;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -312,15 +336,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MyHabits/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -328,6 +353,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.nagaevaki.MyHabits;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

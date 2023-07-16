@@ -37,8 +37,6 @@ class InfoViewController: UIViewController {
         view.backgroundColor = UIColor(named: "HabitGray")
         title = "Информация"
         navigationController?.navigationBar.backgroundColor = UIColor(named: "HabitGray")
-        
-        //navigationController?.navigationBar.isHidden = true
     }
     
     func addSubviews() {
@@ -46,7 +44,6 @@ class InfoViewController: UIViewController {
     }
     
     func setupConstraints() {
-        
         let safeAreaLayoutGuide = view.safeAreaLayoutGuide
         NSLayoutConstraint.activate([
             infoTextView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),

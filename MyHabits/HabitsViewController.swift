@@ -7,7 +7,11 @@
 
 import UIKit
 
-class HabitsViewController: UIViewController {
+protocol HabitsViewControllerDelegate: AnyObject {
+    func updateProgress()
+}
+
+class HabitsViewController: UIViewController, HabitsViewControllerDelegate {
 
     private lazy var addBarButtonItem: UIBarButtonItem = {
         return createTabButton(imageName: "plus", selector: #selector(addbuttonPressed(_:)))
@@ -70,18 +74,16 @@ class HabitsViewController: UIViewController {
         navigationController?.navigationBar.prefersLargeTitles = false
     }
     
+    func updateProgress() {
+        habitsCollection.reloadData()
+    }
+    
     // MARK: - Selectors
     
     @objc func addbuttonPressed(_ sender: UIButton) {
-       
-        let habitViewController = HabitViewController()
-
-//        habitViewController.modalTransitionStyle = .coverVertical
-//        habitViewController.modalPresentationStyle = .fullScreen
-//        present(habitViewController, animated: true)
-        
-        navigationController?.pushViewController(habitViewController, animated: true)
-        
+        let habitViewController = UINavigationController(rootViewController: HabitViewController())
+        habitViewController.modalPresentationStyle = .fullScreen
+        present(habitViewController, animated: true)
     }
 
 }
@@ -111,6 +113,7 @@ extension HabitsViewController: UICollectionViewDataSource {
             return cell
         case 1:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HabitCollectionViewCell.id, for: indexPath) as! HabitCollectionViewCell
+            cell.delegate = self
             cell.update(HabitsStore.shared.habits[indexPath.row])
             return cell
         default:

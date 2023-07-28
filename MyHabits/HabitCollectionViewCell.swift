@@ -11,6 +11,7 @@ class HabitCollectionViewCell: UICollectionViewCell {
     
     static let id = "HabitCollectionViewCell"
     private var habit: Habit!
+    weak var delegate: HabitsViewControllerDelegate?
     
     private lazy var nameLabel: UILabel = { [unowned self] in
         let label = UILabel()
@@ -122,5 +123,6 @@ class HabitCollectionViewCell: UICollectionViewCell {
     @objc private func didTapColorView() {
         HabitsStore.shared.track(habit)
         self.update(habit)
+        delegate?.updateProgress()
     }
 }

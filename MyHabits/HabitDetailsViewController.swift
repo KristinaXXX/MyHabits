@@ -86,15 +86,12 @@ class HabitDetailsViewController: UIViewController {
     }
     
     @objc func editButtonPressed(_ sender: UIButton) {
-       
-        let habitViewController = HabitViewController(habit: habit)
-
-//        habitViewController.modalTransitionStyle = .coverVertical
-//        habitViewController.modalPresentationStyle = .fullScreen
-//        present(habitViewController, animated: true)
+        let habitViewControllerView = HabitViewController(habit: habit)
+        habitViewControllerView.closureClose = { self.navigationController?.popViewController(animated: false) }
+        let habitViewController = UINavigationController(rootViewController: habitViewControllerView)
+        habitViewController.modalPresentationStyle = .fullScreen
         
-        navigationController?.pushViewController(habitViewController, animated: true)
-        
+        present(habitViewController, animated: true)
     }
 }
 

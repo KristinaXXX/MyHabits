@@ -33,6 +33,10 @@ class InfoViewController: UIViewController {
         setupConstraints()
     }
     
+    override func viewDidLayoutSubviews() {
+        self.infoTextView.setContentOffset(.zero, animated: false)
+    }
+    
     private func setupView() {
         view.backgroundColor = UIColor(named: "HabitGray")
         title = "Информация"

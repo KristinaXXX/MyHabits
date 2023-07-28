@@ -11,6 +11,7 @@ import Foundation
 class HabitViewController: UIViewController {
     
     private var habit: Habit!
+    var closureClose: (() -> Void)?
 
     private lazy var contentView: UIView = {
         let contentView = UIView()
@@ -141,7 +142,6 @@ class HabitViewController: UIViewController {
         }
         navigationItem.rightBarButtonItems = [saveBarButtonItem]
         navigationItem.leftBarButtonItems = [cancelBarButtonItem]
-        navigationController?.tabBarController?.tabBar.isHidden = true
     }
     
     private func addSubviews() {
@@ -242,13 +242,11 @@ class HabitViewController: UIViewController {
             habit.color = colorView.backgroundColor!
         }
         HabitsStore.shared.save()
-        navigationController?.popViewController(animated: true)
-        navigationController?.tabBarController?.tabBar.isHidden = false
+        self.dismiss(animated: true)
     }
     
     @objc func cancelbuttonPressed(_ sender: UIButton) {
-        navigationController?.popViewController(animated: true)
-        navigationController?.tabBarController?.tabBar.isHidden = false
+        self.dismiss(animated: true)
     }
     
     @objc private func didTapColorView() {
@@ -265,12 +263,11 @@ class HabitViewController: UIViewController {
         
         let alert = UIAlertController(title: "Удалить привычку", message: "Вы хотите удалить привычку \"\(habit.name)\"?", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: NSLocalizedString("Отмена", comment: "Default action"), style: .cancel, handler: { _ in }))
-        alert.addAction(UIAlertAction(title: NSLocalizedString("Удалить", comment: "Default action"), style: .destructive, handler: {_ in
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Удалить", comment: "Default action"), style: .destructive, handler: { [self]_ in
             HabitsStore.shared.deleteHabit(self.habit)
-            self.navigationController?.popViewController(animated: true)
-            self.navigationController?.popViewController(animated: true)
+            self.dismiss(animated: true, completion: closureClose)
         }))
-        self.present(alert, animated: true, completion: nil)
+        self.present(alert, animated: true)
     }
 }
 

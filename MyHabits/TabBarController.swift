@@ -25,5 +25,4 @@ class TabBarController: UITabBarController {
         
         tabBar.backgroundColor = UIColor(named: "HabitGray")
     }
-
 }

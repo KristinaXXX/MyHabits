@@ -3,6 +3,17 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "HabitsViewController.viewWillAppear(_:):HabitsViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "navigationController?.navigationBar.prefersLargeTitles ">
+            </PersistentString>
+            <PersistentString
+               value = "navigationController?.navigationBar.showsLargeContentViewer">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "HabitDetailsViewController.tableView(_:cellForRowAt:):HabitDetailsViewController.swift">
          <PersistentStrings>
             <PersistentString
@@ -10,6 +21,14 @@
             </PersistentString>
             <PersistentString
                value = "HabitsStore.shared.habit(habit, isTrackedIn: date)">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "HabitViewController.saveButtonPressed(_:):HabitViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "nameTextField.text">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -38,6 +57,9 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "HabitDetailsViewController.tableView(_:didSelectRowAt:):HabitDetailsViewController.swift">
+      </ContextState>
+      <ContextState
          contextName = "HabitCollectionViewCell.update(_:):HabitCollectionViewCell.swift">
          <PersistentStrings>
             <PersistentString
@@ -50,9 +72,6 @@
                value = "UIImage(named: &quot;checkmark.circle.fill&quot;)">
             </PersistentString>
          </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "HabitDetailsViewController.tableView(_:didSelectRowAt:):HabitDetailsViewController.swift">
       </ContextState>
       <ContextState
          contextName = "closure #1 in HabitCollectionViewCell.nameLabel.getter:HabitCollectionViewCell.swift">

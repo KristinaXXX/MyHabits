@@ -21,10 +21,10 @@ class HabitDetailsTableHeaderView: UIView {
         self.init(frame: .zero)
         titleLabel.text = title
     }
-    
+
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
+
         tuneView()
         addSubviews()
         setupConstraints()
@@ -49,5 +49,4 @@ class HabitDetailsTableHeaderView: UIView {
             titleLabel.topAnchor.constraint(equalTo: topAnchor, constant: 20),
         ])
     }
-
 }

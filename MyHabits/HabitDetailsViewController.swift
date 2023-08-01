@@ -79,13 +79,11 @@ class HabitDetailsViewController: UIViewController {
         detailsTableView.delegate = self
         detailsTableView.rowHeight = UITableView.automaticDimension
         
-        let headerView = HabitDetailsTableHeaderView(title: "АКТИВНОСТЬ")
-        detailsTableView.setAndLayout(headerView: headerView)
-        
         navigationItem.rightBarButtonItems = [editBarButtonItem]
+        navigationItem.largeTitleDisplayMode = .never
     }
     
-    @objc func editButtonPressed(_ sender: UIButton) {
+    @objc private func editButtonPressed(_ sender: UIButton) {
         let habitViewControllerView = HabitViewController(habit: habit)
         habitViewControllerView.closureClose = { self.navigationController?.popViewController(animated: false) }
         let habitViewController = UINavigationController(rootViewController: habitViewControllerView)
@@ -112,5 +110,13 @@ extension HabitDetailsViewController: UITableViewDataSource {
 }
 
 extension HabitDetailsViewController: UITableViewDelegate {
-
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        if section == 0 {
+            let headerView = HabitDetailsTableHeaderView(title: "АКТИВНОСТЬ")
+            return headerView
+        } else {
+            return nil
+        }
+    }
 }

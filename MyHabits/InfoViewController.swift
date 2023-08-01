@@ -8,8 +8,8 @@
 import UIKit
 
 class InfoViewController: UIViewController {
-
-    private lazy var infoTextView: UITextView = { [unowned self] in
+    
+    private lazy var infoTextView: UITextView = {
         let textView = UITextView()
         
         if let rtfPath = Bundle.main.url(forResource: "InfoText", withExtension: "rtf") {
@@ -23,6 +23,7 @@ class InfoViewController: UIViewController {
         
         textView.translatesAutoresizingMaskIntoConstraints = false
         textView.isScrollEnabled = true
+        textView.isEditable = false
         return textView
     }()
     
@@ -56,5 +57,4 @@ class InfoViewController: UIViewController {
             infoTextView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor)
         ])
     }
-
 }

@@ -20,7 +20,6 @@ extension UIViewController {
         button.contentHorizontalAlignment = .fill
         
         return UIBarButtonItem(customView: button)
-        
     }
     
     func createButton(title: String, color: UIColor, selector: Selector) -> UIButton {
@@ -32,7 +31,6 @@ extension UIViewController {
         button.setTitleColor(.white, for: .normal)
         button.addTarget(self, action: selector, for: .touchUpInside)
        
-        return button
-        
+        return button        
     }
 }

@@ -10,10 +10,10 @@ import UIKit
 class HabitCollectionViewCell: UICollectionViewCell {
     
     static let id = "HabitCollectionViewCell"
-    private var habit: Habit!
+    private var habit: Habit?
     weak var delegate: HabitsViewControllerDelegate?
     
-    private lazy var nameLabel: UILabel = { [unowned self] in
+    private lazy var nameLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.headline)
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -21,7 +21,7 @@ class HabitCollectionViewCell: UICollectionViewCell {
         return label
     }()
     
-    private lazy var colorView: UIImageView = { [unowned self] in
+    private lazy var colorView: UIImageView = {
         let view = UIImageView()
         view.clipsToBounds = true
         view.layer.cornerRadius = 20
@@ -35,7 +35,7 @@ class HabitCollectionViewCell: UICollectionViewCell {
         return view
     }()
     
-    private lazy var dateLabel: UILabel = { [unowned self] in
+    private lazy var dateLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.caption1)
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -43,7 +43,7 @@ class HabitCollectionViewCell: UICollectionViewCell {
         return label
     }()
     
-    private lazy var counterLabel: UILabel = { [unowned self] in
+    private lazy var counterLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.footnote)
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -81,25 +81,18 @@ class HabitCollectionViewCell: UICollectionViewCell {
             nameLabel.trailingAnchor.constraint(equalTo: colorView.leadingAnchor, constant: -30),
             nameLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
             nameLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 20),
-        ])
-        
-        NSLayoutConstraint.activate([
+
             dateLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
             dateLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 10),
-        ])
-        
-        NSLayoutConstraint.activate([
+
             colorView.widthAnchor.constraint(equalToConstant: 40),
             colorView.heightAnchor.constraint(equalToConstant: 40),
             colorView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -30),
-            colorView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor)
-        ])
-        
-        NSLayoutConstraint.activate([
+            colorView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
+
             counterLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
             counterLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -16),
         ])
-
     }
     
     func update(_ habit: Habit) {
@@ -121,8 +114,9 @@ class HabitCollectionViewCell: UICollectionViewCell {
     }
     
     @objc private func didTapColorView() {
-        HabitsStore.shared.track(habit)
-        self.update(habit)
+        HabitsStore.shared.track(habit!)
+        colorView.image = UIImage(systemName: "checkmark.circle.fill")
+        colorView.tintColor = habit!.color
         delegate?.updateProgress()
     }
 }

@@ -11,7 +11,7 @@ class ProgressCollectionViewCell: UICollectionViewCell {
     
     static let id = "ProgressCollectionViewCell"
     
-    private lazy var nameLabel: UILabel = { [unowned self] in
+    private lazy var nameLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.footnote)
         label.text = "Всё получится!"
@@ -20,7 +20,7 @@ class ProgressCollectionViewCell: UICollectionViewCell {
         return label
     }()
     
-    private lazy var progressLabel: UILabel = { [unowned self] in
+    private lazy var progressLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.footnote)
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -28,7 +28,7 @@ class ProgressCollectionViewCell: UICollectionViewCell {
         return label
     }()
     
-    private lazy var todayProgressView: UIProgressView = { [unowned self] in
+    private lazy var todayProgressView: UIProgressView = {
         let progressView = UIProgressView()
         progressView.translatesAutoresizingMaskIntoConstraints = false
         return progressView
@@ -61,24 +61,18 @@ class ProgressCollectionViewCell: UICollectionViewCell {
         NSLayoutConstraint.activate([
             nameLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10),
             nameLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
-        ])
-        
-        NSLayoutConstraint.activate([
+
             todayProgressView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10),
             todayProgressView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10),
             todayProgressView.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 10),
-        ])
-        
-        NSLayoutConstraint.activate([
+
             progressLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10),
             progressLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
         ])
-
     }
     
     func update() {
         todayProgressView.setProgress(HabitsStore.shared.todayProgress, animated: true)
         progressLabel.text = "\(Int(HabitsStore.shared.todayProgress * 100))%"
-    }
-    
+    }    
 }

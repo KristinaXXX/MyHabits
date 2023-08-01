@@ -7,7 +7,11 @@
 
 import UIKit
 
-class HabitsViewController: UIViewController {
+protocol HabitsViewControllerDelegate: AnyObject {
+    func updateProgress()
+}
+
+class HabitsViewController: UIViewController, HabitsViewControllerDelegate {
 
     private lazy var addBarButtonItem: UIBarButtonItem = {
         return createTabButton(imageName: "plus", selector: #selector(addbuttonPressed(_:)))
@@ -15,11 +19,8 @@ class HabitsViewController: UIViewController {
     
     private lazy var habitsCollection: UICollectionView = {
         let viewLayout = UICollectionViewFlowLayout()
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: viewLayout)
         
-        let collectionView = UICollectionView(
-            frame: .zero,
-            collectionViewLayout: viewLayout
-        )
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.backgroundColor = UIColor(named: "HabitGray")
        
@@ -39,9 +40,9 @@ class HabitsViewController: UIViewController {
     private func setupView() {
         view.backgroundColor = .white
         navigationItem.rightBarButtonItems = [addBarButtonItem]
-        title = "Сегодня"
         habitsCollection.dataSource = self
         habitsCollection.delegate = self
+        title = "Сегодня"
     }
     
     private func addSubviews() {
@@ -67,23 +68,19 @@ class HabitsViewController: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        navigationController?.navigationBar.prefersLargeTitles = false
+    }
+    
+    func updateProgress() {
+        habitsCollection.reloadData()
     }
     
     // MARK: - Selectors
     
-    @objc func addbuttonPressed(_ sender: UIButton) {
-       
-        let habitViewController = HabitViewController()
-
-//        habitViewController.modalTransitionStyle = .coverVertical
-//        habitViewController.modalPresentationStyle = .fullScreen
-//        present(habitViewController, animated: true)
-        
-        navigationController?.pushViewController(habitViewController, animated: true)
-        
+    @objc private func addbuttonPressed(_ sender: UIButton) {
+        let habitViewController = UINavigationController(rootViewController: HabitViewController())
+        habitViewController.modalPresentationStyle = .fullScreen
+        present(habitViewController, animated: true)
     }
-
 }
 
 extension HabitsViewController: UICollectionViewDataSource {
@@ -99,9 +96,7 @@ extension HabitsViewController: UICollectionViewDataSource {
         }
     }
     
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 2
-    }
+    func numberOfSections(in collectionView: UICollectionView) -> Int { return 2 }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         switch indexPath.section {
@@ -111,6 +106,7 @@ extension HabitsViewController: UICollectionViewDataSource {
             return cell
         case 1:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HabitCollectionViewCell.id, for: indexPath) as! HabitCollectionViewCell
+            cell.delegate = self
             cell.update(HabitsStore.shared.habits[indexPath.row])
             return cell
         default:
@@ -122,15 +118,14 @@ extension HabitsViewController: UICollectionViewDataSource {
 extension HabitsViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-
-        let width = collectionView.frame.width - 16*2 //16
+        let width = collectionView.frame.width - 16*2
         switch indexPath.section {
         case 0:
             return CGSize(width: width, height: 55)
         case 1:
             return CGSize(width: width, height: 130)
         default:
-            return CGSize()
+            return .zero
         }
     }
 
@@ -143,9 +138,7 @@ extension HabitsViewController: UICollectionViewDelegateFlowLayout {
         )
     }
 
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        10
-    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat { 10 }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         switch indexPath.section {
@@ -156,6 +149,5 @@ extension HabitsViewController: UICollectionViewDelegateFlowLayout {
         default:
             return
         }
-
     }
 }

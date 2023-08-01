@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "HabitsViewController.viewWillAppear(_:):HabitsViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "navigationController?.navigationBar.prefersLargeTitles ">
+            </PersistentString>
+            <PersistentString
+               value = "navigationController?.navigationBar.showsLargeContentViewer">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "HabitDetailsViewController.tableView(_:cellForRowAt:):HabitDetailsViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "HabitsStore.shared.dates">
+            </PersistentString>
+            <PersistentString
+               value = "HabitsStore.shared.habit(habit, isTrackedIn: date)">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "HabitViewController.saveButtonPressed(_:):HabitViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "nameTextField.text">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in HabitCollectionViewCell.dateLabel.getter:HabitCollectionViewCell.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "label.font">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "HabitsViewController.collectionView(_:layout:sizeForItemAt:):HabitsViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "view.frame.width">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "InfoViewController.viewDidLoad():InfoViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "infoTextView">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "HabitDetailsViewController.tableView(_:didSelectRowAt:):HabitDetailsViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "HabitCollectionViewCell.update(_:):HabitCollectionViewCell.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "habit.name">
+            </PersistentString>
+            <PersistentString
+               value = "habit.isAlreadyTakenToday">
+            </PersistentString>
+            <PersistentString
+               value = "UIImage(named: &quot;checkmark.circle.fill&quot;)">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in HabitCollectionViewCell.nameLabel.getter:HabitCollectionViewCell.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "label.font">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "HabitViewController.setupView():HabitViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "navigationController">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "HabitsViewController.collectionView(_:didSelectItemAt:):HabitsViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "collectionView.deselectItem(at: indexPath, animated: true)">
+            </PersistentString>
+            <PersistentString
+               value = "HabitsStore.shared.habits[indexPath.row]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "HabitsViewController.setupView():HabitsViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "navigationController?.navigationBar.clipsToBounds">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in HabitViewController.saveBarButtonItem.getter:HabitViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "button.tintColor">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "HabitDetailsTableViewCell.update(date:checkmark:):HabitDetailsTableViewCell.swift">
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>
